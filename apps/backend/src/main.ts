@@ -1,48 +1,22 @@
-import express from 'express';
-import multer from 'multer';
-import path from 'path';
-import fs from 'fs-extra';
+/**
+ * This is not a production server yet!
+ * This is only a minimal backend to get started.
+ */
 
-const host = process.env.HOST ?? '0.0.0.0';
-const port = process.env.PORT ? Number(process.env.PORT) : 3003;
+import { Logger } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
 
-const app = express();
+import { AppModule } from './app/app.module';
 
-const upload = multer({ dest: 'uploads/' });
-
-app.get('/', (req, res) => {
-  res.send({ message: 'Hello API' });
-});
-
-app.post('/upload', upload.single('video'), async (req, res) => {
-  const tempPath = req.file.path;
-  const targetPath = path.join(
-    __dirname,
-    '../../../../../..',
-    'uploads',
-    req.file.originalname
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  const globalPrefix = 'api';
+  app.setGlobalPrefix(globalPrefix);
+  const port = process.env.PORT || 3003;
+  await app.listen(port);
+  Logger.log(
+    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
   );
+}
 
-  try {
-    await fs.move(tempPath, targetPath);
-    res.send('File uploaded!');
-  } catch (err) {
-    console.error(`Error moving file: ${err}`);
-    res.sendStatus(500);
-  }
-});
-
-app.get('/videos/:filename', (req, res) => {
-  const videoPath = path.join(
-    __dirname,
-    '../../../../../..',
-    'uploads',
-    req.params.filename
-  );
-  console.log({ videoPath });
-  res.sendFile(videoPath);
-});
-
-app.listen(port, host, () => {
-  console.log(`[ ready ] http://localhost:${port}`);
-});
+bootstrap();
