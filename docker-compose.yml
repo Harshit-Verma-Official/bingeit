@@ -104,6 +104,7 @@ services:
       - postgres
     environment:
       DATABASE_URL: postgres://myuser:mypassword@postgres:5432/mydatabase
+      NX_DAEMON: true
     volumes:
       - .:/app
       - /app/node_modules
