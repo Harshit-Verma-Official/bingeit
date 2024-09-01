@@ -8,7 +8,8 @@
     "start-admin": "nx serve admin",
     "start": "nx reset && nx run-many --target=serve --projects=backend,frontend,admin --parallel --nxBail=true",
     "docker-dev": "docker-compose up --build",
-    "generate:resource": "nx g resource --project=backend"
+    "generate:resource": "nx g resource --project=backend",
+    "clean": "rm -rf node_modules && npm i"
   },
   "private": true,
   "dependencies": {
