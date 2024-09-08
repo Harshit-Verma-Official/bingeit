@@ -52,6 +52,21 @@
         "style": "tailwind",
         "linter": "eslint"
       }
+    },
+    "@nx/react": {
+      "application": {
+        "babel": true,
+        "style": "tailwind",
+        "linter": "eslint",
+        "bundler": "webpack"
+      },
+      "component": {
+        "style": "tailwind"
+      },
+      "library": {
+        "style": "tailwind",
+        "linter": "eslint"
+      }
     }
   },
   "nxCloudAccessToken": "NDljYjJkOTQtMWJhNC00NzI3LWIxMjctZmQ3ZmQyN2I2YjFifHJlYWQtd3JpdGU=",
