@@ -1,0 +1,15 @@
+{
+  "name": "ott",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ott/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project ott --web",
+  "targets": {
+    "serve": {
+      "options": {
+        "port": 3000
+      }
+    }
+  }
+}

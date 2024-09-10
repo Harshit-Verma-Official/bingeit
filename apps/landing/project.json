@@ -1,26 +1,26 @@
 {
-  "name": "frontend",
+  "name": "landing",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/frontend",
+  "sourceRoot": "apps/landing",
   "projectType": "application",
   "tags": [],
-  "// targets": "to see all targets run: nx show project frontend --web",
+  "// targets": "to see all targets run: nx show project landing --web",
   "targets": {
     "serve": {
       "executor": "@nx/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "frontend:build",
+        "buildTarget": "landing:build",
         "dev": true,
-        "port": 3000
+        "port": 3004
       },
       "configurations": {
         "development": {
-          "buildTarget": "frontend:build:development",
+          "buildTarget": "landing:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "frontend:build:production",
+          "buildTarget": "landing:build:production",
           "dev": false
         }
       }

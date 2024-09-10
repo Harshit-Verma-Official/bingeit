@@ -5,7 +5,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 export function App() {
   return (
     <div>
-      <NxWelcome title="admin" />
+      <NxWelcome title="ott" />
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
