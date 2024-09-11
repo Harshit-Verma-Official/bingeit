@@ -12,7 +12,7 @@
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/eslint.config.js"
     ],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
+    "sharedGlobals": []
   },
   "plugins": [
     {
@@ -52,7 +52,8 @@
         "testTargetName": "test",
         "serveTargetName": "serve",
         "previewTargetName": "preview",
-        "serveStaticTargetName": "serve-static"
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck"
       }
     }
   ],
@@ -68,7 +69,7 @@
         "babel": true,
         "style": "tailwind",
         "linter": "eslint",
-        "bundler": "webpack"
+        "bundler": "vite"
       },
       "component": {
         "style": "tailwind"
@@ -77,14 +78,6 @@
         "style": "tailwind",
         "linter": "eslint"
       }
-    }
-  },
-  "nxCloudAccessToken": "NDljYjJkOTQtMWJhNC00NzI3LWIxMjctZmQ3ZmQyN2I2YjFifHJlYWQtd3JpdGU=",
-  "targetDefaults": {
-    "@nx/esbuild:esbuild": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
     }
   }
 }
