@@ -45,5 +45,6 @@ Thumbs.db
 .next
 out
 
+.eslintcache
 .env
 uploads
